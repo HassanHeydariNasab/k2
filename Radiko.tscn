@@ -1,0 +1,321 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://Radiko.gd" type="Script" id=1]
+[ext_resource path="res://Elementoj/Stelo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Elementoj/Luno.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Butonoj/turni.png" type="Texture" id=5]
+[ext_resource path="res://Elementoj/stelo.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 600, 200 )
+
+[node name="Radiko" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Grundo" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Aspekto" type="Polygon2D" parent="Grundo"]
+
+polygon = Vector2Array( 0, 420, 1200, 420, 1200, 800, 0, 800 )
+uv = Vector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Grundo" type="StaticBody2D" parent="Grundo"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 600, 620 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 3
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grundo/Grundo"]
+
+transform/pos = Vector2( 600, 620 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Objektoj" type="Node2D" parent="."]
+
+[node name="Ekvivejo" type="Polygon2D" parent="."]
+
+transform/pos = Vector2( 100, 260 )
+transform/scale = Vector2( 0.5, 0.5 )
+polygon = Vector2Array( 660, 320, 820, 380, 980, 320, 900, 140, 740, 140 )
+uv = Vector2Array(  )
+color = Color( 0.129412, 0.129412, 0.129412, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( -820, -260 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Steloj" type="Node2D" parent="."]
+
+[node name="Stelo" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 940, 350 )
+
+[node name="Stelo1" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 550, 350 )
+
+[node name="Stelo2" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 730, 320 )
+
+[node name="Stelo3" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 710, 90 )
+
+[node name="Stelo4" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 380, 180 )
+
+[node name="Stelo5" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1020, 240 )
+
+[node name="Stelo6" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 570, 180 )
+
+[node name="Stelo7" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 890, 50 )
+
+[node name="Stelo8" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 230, 60 )
+
+[node name="Stelo9" parent="Steloj" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1130, 110 )
+
+[node name="Luno" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 820, 180 )
+
+[node name="Kanvaso" type="CanvasLayer" parent="."]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Kvadrato" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 360.0
+margin/bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Kvadrato"
+flat = false
+
+[node name="Forigi" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1020.0
+margin/top = 0.0
+margin/right = 1380.0
+margin/bottom = 120.0
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Forigi"
+flat = false
+
+[node name="Kontroliloj" type="Control" parent="Kanvaso"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 930.0
+margin/top = 350.0
+margin/right = 970.0
+margin/bottom = 390.0
+
+[node name="Turni_dekstre" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
+
+visibility/opacity = 0.4
+transform/pos = Vector2( 0, 80 )
+transform/scale = Vector2( 2, 2 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "turni_dekstre"
+visibility_mode = 1
+
+[node name="Turni_dekstre_malrapide" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
+
+visibility/opacity = 0.4
+transform/pos = Vector2( -200, 100 )
+transform/scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "turni_dekstre_malrapide"
+visibility_mode = 1
+
+[node name="Turni_maldekstre" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
+
+visibility/opacity = 0.4
+transform/pos = Vector2( -660, 340 )
+transform/rot = 180.0
+transform/scale = Vector2( 2, 2 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "turni_maldekstre"
+visibility_mode = 1
+
+[node name="Turni_maldekstre_malrapide" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
+
+visibility/opacity = 0.4
+transform/pos = Vector2( -464, 290 )
+transform/rot = 180.0
+transform/scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "turni_maldekstre_malrapide"
+visibility_mode = 1
+
+[node name="Salti" type="TouchScreenButton" parent="Kanvaso/Kontroliloj"]
+
+visibility/opacity = 0.4
+transform/pos = Vector2( -450, 330 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.8, 1.8 )
+normal = ExtResource( 5 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "salti"
+visibility_mode = 1
+
+[node name="Steloj" type="Label" parent="Kanvaso"]
+
+anchor/left = 3
+anchor/right = 3
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 140.0
+margin/top = 0.0
+margin/right = -88.0
+margin/bottom = 140.0
+custom_fonts/font = ExtResource( 4 )
+text = "0 X"
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Fono" type="Polygon2D" parent="Kanvaso/Steloj"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 0, 40 )
+polygon = Vector2Array( 420, -40, 400, 100, 0, 100, -20, -40 )
+uv = Vector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Ikono" type="Sprite" parent="Kanvaso/Steloj"]
+
+transform/pos = Vector2( 304, 66 )
+transform/scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 6 )
+
+[node name="Brileti" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.2
+one_shot = false
+autostart = true
+
+[node name="Luno_rotacii" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
+[connection signal="pressed" from="Kanvaso/Kvadrato" to="." method="_on_Kvadrato_pressed"]
+
+[connection signal="toggled" from="Kanvaso/Forigi" to="." method="_on_Forigi_toggled"]
+
+[connection signal="timeout" from="Brileti" to="." method="_on_Brileti_timeout"]
+
+[connection signal="timeout" from="Luno_rotacii" to="." method="_on_Luno_rotacii_timeout"]
+
+
