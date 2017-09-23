@@ -2,10 +2,21 @@ extends Node2D
 
 var tipo = "Elemento"
 
+onready var Aperi = get_node("Aperi")
 onready var Kasxi = get_node("Kasxi")
 onready var Brileti = get_node("Brileti")
 
 func _ready():
+	Aperi.interpolate_property(self, "transform/scale",
+	Vector2(0.01,0.01), Vector2(0.3,0.3), 1, Tween.TRANS_BOUNCE,
+	Tween.EASE_OUT
+	)
+	Aperi.interpolate_property(self, "transform/rot",
+	180, 0, 1, Tween.TRANS_QUAD,
+	Tween.EASE_OUT
+	)
+	Aperi.start()
+
 	Kasxi.interpolate_property(self, "transform/scale",
 	Vector2(0.3,0.3), Vector2(0.6,0.6), 0.25, Tween.TRANS_QUAD,
 	Tween.EASE_IN
@@ -18,7 +29,7 @@ func _ready():
 	1, 0, 0.25, Tween.TRANS_QUAD,
 	Tween.EASE_IN
 	)
-	
+
 	Brileti.interpolate_property( self, "transform/scale",
 	Vector2(0.3,0.3), Vector2(0.4,0.4), 0.15, Tween.TRANS_QUAD,
 	Tween.EASE_IN
@@ -35,6 +46,7 @@ func _process(delta):
 func _on_Areo_body_enter( korpo ):
 	if korpo.tipo == "Objekto":
 		get_node("Areo").clear_shapes()
+		T.Radiko.Stelon_kapti_sono.play()
 		T.steloj += 1
 		get_node("/root/Radiko/Kanvaso/Steloj").set_text(str(T.steloj)+" X")
 		Kasxi.start()

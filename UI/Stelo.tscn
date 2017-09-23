@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://UI/Stelo.gd" type="Script" id=1]
+[ext_resource path="res://Elementoj/stelo.png" type="Texture" id=2]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -1, 53, -43, 67, -44, 21, -28, -28, 0, -62, 27, -28, 43, 23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 43, 23, 41, 67, -1, 53 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -44, 21, -67, -14, -28, -28 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 27, -28, 66, -12, 43, 23 )
+
+[node name="Stelo" type="Node2D"]
+
+transform/pos = Vector2( 90, 110 )
+z/z = 1
+script/script = ExtResource( 1 )
+
+[node name="Pinglo" type="PinJoint2D" parent="."]
+
+transform/pos = Vector2( -90, -110 )
+node_a = NodePath("")
+node_b = NodePath("../Stelo")
+bias/bias = 0.0
+collision/exclude_nodes = false
+softness = 0.0
+
+[node name="Stelo" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( -90, 70 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 1.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 1
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Aspekto" type="Sprite" parent="Stelo"]
+
+texture = ExtResource( 2 )
+
+[node name="Rekordo" type="Label" parent="Stelo"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -50.0
+margin/top = -60.0
+margin/right = 117.0
+margin/bottom = 157.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "123"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stelo"]
+
+build_mode = 0
+polygon = Vector2Array( 0, -62, 27, -28, 66, -12, 43, 23, 41, 67, -1, 53, -43, 67, -44, 21, -67, -14, -28, -28 )
+shape_range = Vector2( 0, 3 )
+trigger = false
+
+[connection signal="body_enter" from="Stelo" to="." method="_on_Stelo_body_enter"]
+
+[connection signal="input_event" from="Stelo" to="." method="_on_Stelo_input_event"]
+
+

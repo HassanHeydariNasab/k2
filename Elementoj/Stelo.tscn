@@ -51,6 +51,13 @@ playback/active = false
 playback/repeat = true
 playback/speed = 1.0
 
+[node name="Aperi" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="body_enter" from="Areo" to="." method="_on_Areo_body_enter"]
 
 [connection signal="tween_complete" from="Kasxi" to="." method="_on_Kasxi_tween_complete"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Elementoj/Stelo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Elementoj/Luno.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objektoj/Balancilo.tscn" type="PackedScene" id=3]
+
+[node name="Nivelo" type="Node2D"]
+
+[node name="Steloj" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Stelo" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 540, 140 )
+
+[node name="Stelo1" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1010, 240 )
+
+[node name="Stelo3" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 350, 240 )
+
+[node name="Stelo4" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1100, 100 )
+
+[node name="Stelo5" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 340, 70 )
+
+[node name="Stelo2" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 690, 320 )
+
+[node name="Luno" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 790, 80 )
+
+[node name="Balancilo" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 690, 380 )
+
+

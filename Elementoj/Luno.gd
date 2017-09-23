@@ -12,7 +12,7 @@ func _ready():
 	)
 	Kasxi.interpolate_property(self, "transform/rot",
 	0, -90, 1, Tween.TRANS_QUAD,
-	Tween.EASE_IN
+	Tween.EASE_OUT
 	)
 	Kasxi.interpolate_property(self, "visibility/opacity",
 	1, 0, 1, Tween.TRANS_QUAD,
@@ -26,9 +26,12 @@ func _ready():
 func _on_Areo_body_enter( korpo ):
 	if korpo.tipo == "Objekto":
 		get_node("Areo").clear_shapes()
+		T.Radiko.Rotacii.stop()
+		T.Radiko.Lunon_kapti_sono.play()
 		Kasxi.start()
 
 func _on_Kasxi_tween_complete( object, key ):
+	T.Radiko.PreVenko.start()
 	queue_free()
 
 func _on_Rotacii_tween_step( object, key, elapsed, value ):

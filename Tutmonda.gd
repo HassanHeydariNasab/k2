@@ -1,7 +1,15 @@
 extends Node
 
+onready var Radiko = null
+onready var Niveloj = null
+var nivelo = 0
+var jxus_rekordita = false
+var Kaptitajxo = null
+
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
+
+var lingvo_elektita = null
 
 var akcelometro_aktivita = true
 var os = OS.get_name()

@@ -24,7 +24,7 @@ size_flags/vertical = 2
 margin/left = -390.0
 margin/top = -50.0
 margin/right = 193.0
-margin/bottom = 37.0
+margin/bottom = 50.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = true
 is_pressed = true
@@ -34,6 +34,48 @@ text = "Akcelometro"
 flat = false
 align = 0
 
+[node name="Muzikoj" type="CheckButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -390.0
+margin/top = 80.0
+margin/right = 193.0
+margin/bottom = 180.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Muzikoj"
+flat = false
+align = 0
+
+[node name="Sonoj" type="CheckButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -390.0
+margin/top = 210.0
+margin/right = 193.0
+margin/bottom = 310.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Sonoj"
+flat = false
+align = 0
+
 [connection signal="toggled" from="Akcelometro" to="." method="_on_Akcelometro_toggled"]
+
+[connection signal="toggled" from="Muzikoj" to="." method="_on_Muzikoj_toggled"]
+
+[connection signal="toggled" from="Sonoj" to="." method="_on_Sonoj_toggled"]
 
 
