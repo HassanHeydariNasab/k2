@@ -1,7 +1,5 @@
 extends Node2D
 
-var tipo = "Elemento"
-
 onready var Aperi = get_node("Aperi")
 onready var Kasxi = get_node("Kasxi")
 onready var Brileti = get_node("Brileti")
@@ -44,11 +42,13 @@ func _process(delta):
 	pass
 
 func _on_Areo_body_enter( korpo ):
-	if korpo.tipo == "Objekto":
+	if korpo.get_layer_mask_bit(1):
 		get_node("Areo").clear_shapes()
-		T.Radiko.Stelon_kapti_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 		T.steloj += 1
-		get_node("/root/Radiko/Kanvaso/Steloj").set_text(str(T.steloj)+" X")
+		T.Radiko.Steloj_Nombroj.set_text(str(T.steloj)+" X")
+		T.Radiko.Stelon_kapti_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
+		T.Radiko.Steloj_Sxangxi.stop_all()
+		T.Radiko.Steloj_Sxangxi.resume_all()
 		Kasxi.start()
 
 func _on_Kasxi_tween_complete( object, key ):

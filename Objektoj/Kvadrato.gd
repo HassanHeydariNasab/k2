@@ -3,7 +3,6 @@ extends RigidBody2D
 onready var Aspekto = get_node("Aspekto")
 onready var Aperi = get_node("Aperi")
 
-var tipo = "Objekto"
 var Korpoj = []
 var akcelometro
 
@@ -27,7 +26,7 @@ func _fixed_process(delta):
 		elif akcelometro.x < -3:
 			set_angular_velocity(5)
 		if akcelometro.y > -0.7 and Korpoj.size() > 0:
-			if Korpoj[0].get_name() == "Grundo" or Korpoj[0].tipo == "Objekto":
+			if Korpoj[0].get_layer_mask_bit(0) or Korpoj[0].get_layer_mask_bit(1):
 				set_linear_velocity(Vector2(get_linear_velocity().x,-100))
 	else:
 		if Input.is_action_pressed("turni_dekstre_malrapide"):
@@ -39,7 +38,7 @@ func _fixed_process(delta):
 		elif Input.is_action_pressed("turni_dekstre"):
 			set_angular_velocity(5)
 		if (Input.is_action_pressed("salti")) and Korpoj.size() > 0:
-			if Korpoj[0].get_name() == "Grundo" or Korpoj[0].tipo == "Objekto":
+			if Korpoj[0].get_layer_mask_bit(0) or Korpoj[0].get_layer_mask_bit(1):
 				set_linear_velocity(Vector2(get_linear_velocity().x,-100))
 
 func _on_Kvadrato_input_event( viewport, evento, shape_idx ):

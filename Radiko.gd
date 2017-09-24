@@ -16,8 +16,10 @@ onready var Stelon_kapti_sono = get_node("Stelon_kapti_sono")
 onready var Lunon_kapti_sono = get_node("Lunon_kapti_sono")
 onready var Kvadrato_Nombroj = get_node("Kanvaso/Kvadrato/Nombroj")
 onready var FPS = get_node("Kanvaso/FPS")
+onready var Steloj_Sxangxi = get_node("Kanvaso/Steloj/Sxangxi")
+onready var Steloj_Nombroj = get_node("Kanvaso/Steloj/Nombroj")
 
-const KVADRATOJ = [0, 4, 9]
+const KVADRATOJ = [0, 4, 9, 4]
 var kvadratoj = 0
 
 func _ready():
@@ -33,6 +35,14 @@ func _ready():
 	Luno = Nivelo.get_node("Luno")
 	if T.akcelometro_aktivita:
 		get_node("Kanvaso/Kontroliloj").queue_free()
+	Steloj_Sxangxi.interpolate_property(Steloj_Nombroj, "custom_colors/font_color",
+		Color("ffffff"), Color("ffcc00"), 0.5, Tween.TRANS_QUAD,
+		Tween.EASE_OUT
+	)
+	Steloj_Sxangxi.interpolate_property(Steloj_Nombroj, "custom_colors/font_color",
+		Color("ffcc00"), Color("ffffff"), 0.5, Tween.TRANS_QUAD,
+		Tween.EASE_OUT,0.5
+	)
 	set_process(true)
 
 func _process(delta):
@@ -53,7 +63,6 @@ func _on_Kvadrato_pressed():
 		T.Objekto.get_node("Aspekto").set_texture(Kvadrato_malaktivita_teksturo)
 		T.Objekto.get_node("Fumo_blanka").set_emitting(false)
 		T.Objekto.get_node("Fumo_flava").set_emitting(false)
-		
 	T.Objekto = Kvadrato_
 	T.Objekto.set_fixed_process(true)
 
@@ -78,3 +87,10 @@ func _on_PreVenko_timeout():
 		T.Agordejo.save(T.agordejo)
 		T.jxus_rekordita = true
 	get_tree().change_scene("res://Niveloj.tscn")
+
+func _on_Sxangxi_tween_step( object, key, elapsed, value ):
+	if elapsed == 1:
+		Steloj_Sxangxi.stop_all()
+
+func _on_Rekomenci_pressed():
+	get_tree().reload_current_scene()

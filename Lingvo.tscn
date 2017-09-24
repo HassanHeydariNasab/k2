@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Lingvo.gd" type="Script" id=1]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=2]
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=3]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=4]
 [ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://Sonoj/97470__egolessdub__keys19.ogg" type="AudioStream" id=6]
 
 [node name="Lingvo" type="Node2D"]
 
@@ -126,10 +127,10 @@ max_lines_visible = -1
 
 [node name="Enveno_sono" type="StreamPlayer" parent="."]
 
-stream/stream = null
+stream/stream = ExtResource( 6 )
 stream/play = false
 stream/loop = false
-stream/volume_db = 8.0
+stream/volume_db = 5.0
 stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0

@@ -10,6 +10,7 @@ func _init():
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	T.Niveloj = self
+	get_node("Enveno_sono").set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 	get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	for n in range(1,4):
 		get_node("N"+str(n)+"/Stelo/Stelo/Aspekto/Rekordo").set_text(str(T.Agordejo.get_value("Steloj", str(n), 0)))
@@ -29,6 +30,10 @@ func _on_N1_pressed():
 
 func _on_N2_pressed():
 	T.nivelo = 2
+	get_tree().change_scene("res://Radiko.tscn")
+
+func _on_N3_pressed():
+	T.nivelo = 3
 	get_tree().change_scene("res://Radiko.tscn")
 
 func _on_Agordoj_pressed():
