@@ -28,9 +28,9 @@ func _ready():
 	T.steloj = 0
 	kvadratoj = KVADRATOJ[T.nivelo]
 	Kvadrato_Nombroj.set_text(str(kvadratoj))
-	get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	add_child(load("res://Niveloj/N%d.tscn" % T.nivelo).instance())
 	Nivelo = get_node("Nivelo")
+	Nivelo.get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	Steloj = Nivelo.get_node("Steloj")
 	Luno = Nivelo.get_node("Luno")
 	if T.akcelometro_aktivita:

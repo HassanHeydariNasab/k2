@@ -4,6 +4,7 @@ func _ready():
 	get_node("Akcelometro").set_pressed(T.akcelometro_aktivita)
 	get_node("Sonoj").set_pressed(T.Agordejo.get_value("Agordoj", "Sonoj", true))
 	get_node("Muzikoj").set_pressed(T.Agordejo.get_value("Agordoj", "Muzikoj", true))
+	get_node("Enveno_sono").set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_Akcelometro_toggled( b ):
 	T.Agordejo.set_value("Agordoj", "akcelometro", b)

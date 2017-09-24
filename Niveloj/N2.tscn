@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Elementoj/Stelo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elementoj/Luno.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objektoj/Balancilo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Muzikoj/152723__corsica-s__popibuuns.ogg" type="AudioStream" id=4]
 
 [node name="Nivelo" type="Node2D"]
 
@@ -41,5 +42,16 @@ transform/pos = Vector2( 790, 80 )
 [node name="Balancilo" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 690, 380 )
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 4 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

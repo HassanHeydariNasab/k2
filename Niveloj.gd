@@ -41,3 +41,6 @@ func _on_Agordoj_pressed():
 
 func _on_Lingvo_pressed():
 	get_tree().change_scene("res://Lingvo.tscn")
+
+func _on_Pri_pressed():
+	get_tree().change_scene("res://Pri.tscn")

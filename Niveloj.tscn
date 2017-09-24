@@ -123,10 +123,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -820.0
-margin/top = -360.0
-margin/right = -1306.0
-margin/bottom = -460.0
+margin/left = -830.0
+margin/top = -400.0
+margin/right = -1302.0
+margin/bottom = -500.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -141,6 +141,35 @@ shortcut = null
 text = "Agordoj"
 flat = false
 
+[node name="Pri" type="Button" parent="."]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -960.0
+margin/top = -320.0
+margin/right = -1246.0
+margin/bottom = -420.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Pri"
+flat = false
+
 [node name="Lingvo" type="Button" parent="."]
 
 anchor/left = 1
@@ -153,9 +182,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = -700.0
-margin/top = -460.0
+margin/top = -480.0
 margin/right = -1357.0
-margin/bottom = -560.0
+margin/bottom = -580.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -221,6 +250,8 @@ stream/buffering_ms = 500
 [connection signal="pressed" from="N3" to="." method="_on_N3_pressed"]
 
 [connection signal="pressed" from="Agordoj" to="." method="_on_Agordoj_pressed"]
+
+[connection signal="pressed" from="Pri" to="." method="_on_Pri_pressed"]
 
 [connection signal="pressed" from="Lingvo" to="." method="_on_Lingvo_pressed"]
 

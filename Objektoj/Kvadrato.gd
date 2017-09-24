@@ -27,7 +27,7 @@ func _fixed_process(delta):
 			set_angular_velocity(5)
 		if akcelometro.y > -0.7 and Korpoj.size() > 0:
 			if Korpoj[0].get_layer_mask_bit(0) or Korpoj[0].get_layer_mask_bit(1):
-				set_linear_velocity(Vector2(get_linear_velocity().x,-100))
+				set_linear_velocity(Vector2(get_linear_velocity().x,-120))
 	else:
 		if Input.is_action_pressed("turni_dekstre_malrapide"):
 			set_angular_velocity(2)
@@ -39,7 +39,7 @@ func _fixed_process(delta):
 			set_angular_velocity(5)
 		if (Input.is_action_pressed("salti")) and Korpoj.size() > 0:
 			if Korpoj[0].get_layer_mask_bit(0) or Korpoj[0].get_layer_mask_bit(1):
-				set_linear_velocity(Vector2(get_linear_velocity().x,-100))
+				set_linear_velocity(Vector2(get_linear_velocity().x,-120))
 
 func _on_Kvadrato_input_event( viewport, evento, shape_idx ):
 	if T.foranta and evento.is_pressed() and T.Objekto != self:
