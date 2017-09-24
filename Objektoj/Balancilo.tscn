@@ -1,15 +1,26 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 300, 10 )
+extents = Vector2( 608.828, 7 )
 
 [sub_resource type="GDScript" id=2]
 
 script/source = "extends RigidBody2D
 
 var tipo = \"Objekto\""
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 300, 7 )
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends RigidBody2D
+
+var tipo = \"\""
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
@@ -18,7 +29,7 @@ points = Vector2Array( 0, -10, 40, 50, -40, 50 )
 
 [sub_resource type="GDScript" id=4]
 
-script/source = "extends RigidBody2D
+script/source = "extends StaticBody2D
 
 var tipo = \"Objekto\""
 
@@ -28,7 +39,7 @@ var tipo = \"Objekto\""
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 0.49275, 0, 0, 0.5, 3.00751e-05, -6.5 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -65,20 +76,22 @@ invert/border = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cxefumajxo"]
 
+transform/pos = Vector2( 3.00751e-05, -6.5 )
+transform/scale = Vector2( 0.49275, 0.5 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Akso" type="RigidBody2D" parent="."]
+[node name="Sub_Cxefumajxo" type="RigidBody2D" parent="."]
 
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 20 )
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 0.5, 0, 6.5 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 0
-mass = 50.0
+mass = 1.0
 friction = 1.0
 bounce = 0.0
 gravity_scale = 1.0
@@ -92,6 +105,28 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
+script/script = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sub_Cxefumajxo"]
+
+transform/pos = Vector2( 0, 6.5 )
+transform/scale = Vector2( 1, 0.5 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Akso" type="StaticBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 20 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 script/script = SubResource( 4 )
 
 [node name="Aspekto" type="Polygon2D" parent="Akso"]
@@ -117,10 +152,21 @@ _update_shape_index = 0
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 
-node_a = NodePath("../Cxefumajxo")
+transform/pos = Vector2( 0, 10 )
+node_a = NodePath("../Sub_Cxefumajxo")
 node_b = NodePath("../Akso")
 bias/bias = 0.0
-collision/exclude_nodes = true
+collision/exclude_nodes = false
 softness = 0.0
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+
+transform/pos = Vector2( 0, -10 )
+node_a = NodePath("../Cxefumajxo")
+node_b = NodePath("../Sub_Cxefumajxo")
+bias/bias = 0.0
+collision/exclude_nodes = false
+length = 600.0
+initial_offset = 20.0
 
 

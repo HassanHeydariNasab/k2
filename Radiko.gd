@@ -14,19 +14,36 @@ onready var Rotacii_sono = get_node("Rotacii_sono")
 onready var Brileti_sono = get_node("Brileti_sono")
 onready var Stelon_kapti_sono = get_node("Stelon_kapti_sono")
 onready var Lunon_kapti_sono = get_node("Lunon_kapti_sono")
+onready var Kvadrato_Nombroj = get_node("Kanvaso/Kvadrato/Nombroj")
+onready var FPS = get_node("Kanvaso/FPS")
+
+const KVADRATOJ = [0, 4, 9]
+var kvadratoj = 0
 
 func _ready():
 	T.Radiko = self
 	T.Objekto = null
 	T.steloj = 0
+	kvadratoj = KVADRATOJ[T.nivelo]
+	Kvadrato_Nombroj.set_text(str(kvadratoj))
+	get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	add_child(load("res://Niveloj/N%d.tscn" % T.nivelo).instance())
 	Nivelo = get_node("Nivelo")
 	Steloj = Nivelo.get_node("Steloj")
 	Luno = Nivelo.get_node("Luno")
 	if T.akcelometro_aktivita:
 		get_node("Kanvaso/Kontroliloj").queue_free()
+	set_process(true)
+
+func _process(delta):
+	FPS.set_text(str(int(1.0/delta)))
 
 func _on_Kvadrato_pressed():
+	if kvadratoj >= 1:
+		kvadratoj -= 1
+		Kvadrato_Nombroj.set_text(str(kvadratoj))
+	else:
+		return
 	var Kvadrato_ = Kvadrato.instance()
 	Kvadrato_.set_global_pos(Ekvivejo.get_global_pos())
 	Kvadrato_.get_node("Aspekto").set_texture(Kvadrato_teksturo)
@@ -34,6 +51,9 @@ func _on_Kvadrato_pressed():
 	if T.Objekto != null:
 		T.Objekto.set_fixed_process(false)
 		T.Objekto.get_node("Aspekto").set_texture(Kvadrato_malaktivita_teksturo)
+		T.Objekto.get_node("Fumo_blanka").set_emitting(false)
+		T.Objekto.get_node("Fumo_flava").set_emitting(false)
+		
 	T.Objekto = Kvadrato_
 	T.Objekto.set_fixed_process(true)
 
@@ -45,12 +65,12 @@ func _on_Brileti_timeout():
 	if int(rand_range(0,2)) == 0 and Steloj.get_child_count() > 0:
 		var Stelo = Steloj.get_child(int(rand_range(0,Steloj.get_child_count())))
 		Stelo.Brileti.resume_all()
-		Brileti_sono.play()
+		Brileti_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_Rotacii_timeout():
 	if int(rand_range(0,3)) == 0:
 		Luno.Rotacii.resume_all()
-		Rotacii_sono.play()
+		Rotacii_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_PreVenko_timeout():
 	if T.steloj > T.Agordejo.get_value("Steloj", str(T.nivelo), 0):

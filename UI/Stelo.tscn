@@ -26,22 +26,12 @@ points = Vector2Array( 27, -28, 66, -12, 43, 23 )
 
 [node name="Stelo" type="Node2D"]
 
-transform/pos = Vector2( 90, 110 )
 z/z = 1
 script/script = ExtResource( 1 )
 
-[node name="Pinglo" type="PinJoint2D" parent="."]
-
-transform/pos = Vector2( -90, -110 )
-node_a = NodePath("")
-node_b = NodePath("../Stelo")
-bias/bias = 0.0
-collision/exclude_nodes = false
-softness = 0.0
-
 [node name="Stelo" type="RigidBody2D" parent="."]
 
-transform/pos = Vector2( -90, 70 )
+transform/pos = Vector2( 0, 170 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -60,14 +50,14 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 1.0
+bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 1
 contact_monitor = true
 sleeping = false
-can_sleep = true
+can_sleep = false
 velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
@@ -77,7 +67,14 @@ damp_override/angular = -1.0
 
 texture = ExtResource( 2 )
 
-[node name="Rekordo" type="Label" parent="Stelo"]
+[node name="Rekordita" type="Tween" parent="Stelo/Aspekto"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Rekordo" type="Label" parent="Stelo/Aspekto"]
 
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
@@ -99,10 +96,19 @@ max_lines_visible = -1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stelo"]
 
+visibility/visible = false
 build_mode = 0
 polygon = Vector2Array( 0, -62, 27, -28, 66, -12, 43, 23, 41, 67, -1, 53, -43, 67, -44, 21, -67, -14, -28, -28 )
 shape_range = Vector2( 0, 3 )
 trigger = false
+
+[node name="Pinglo" type="PinJoint2D" parent="."]
+
+node_a = NodePath("../Stelo")
+node_b = NodePath("")
+bias/bias = 0.4
+collision/exclude_nodes = true
+softness = 2.0
 
 [connection signal="body_enter" from="Stelo" to="." method="_on_Stelo_body_enter"]
 

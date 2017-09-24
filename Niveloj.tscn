@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Niveloj.gd" type="Script" id=1]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://UI/Stelo.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Muzikoj/353194__inspectorj__wind-chimes-a.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Sonoj/66136__theta4__ding30603-spedup.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sonoj/169375__yoh__whoosh-crystal-reverse-yoh.ogg" type="AudioStream" id=9]
 
 [node name="Niveloj" type="Control"]
 
@@ -47,9 +48,9 @@ shortcut = null
 text = "Nivelo 1"
 flat = false
 
-[node name="Stelo1" parent="N1" instance=ExtResource( 6 )]
+[node name="Stelo" parent="N1" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 260, 210 )
+transform/pos = Vector2( 160, 100 )
 
 [node name="N2" type="Button" parent="."]
 
@@ -77,7 +78,35 @@ flat = false
 
 [node name="Stelo" parent="N2" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 260, 210 )
+transform/pos = Vector2( 160, 100 )
+
+[node name="N3" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 790.0
+margin/top = 0.0
+margin/right = 1130.0
+margin/bottom = 100.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Nivelo 3"
+flat = false
+
+[node name="Stelo" parent="N3" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 170, 100 )
 
 [node name="Agordoj" type="Button" parent="."]
 
@@ -143,7 +172,7 @@ stream/stream = ExtResource( 7 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
-stream/autoplay = true
+stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
@@ -154,6 +183,17 @@ stream/stream = ExtResource( 8 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Rekordita_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 9 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 20.0
 stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0

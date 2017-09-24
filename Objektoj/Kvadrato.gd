@@ -1,11 +1,18 @@
 extends RigidBody2D
 
+onready var Aspekto = get_node("Aspekto")
+onready var Aperi = get_node("Aperi")
+
 var tipo = "Objekto"
 var Korpoj = []
 var akcelometro
 
 func _ready():
-	pass
+	Aperi.interpolate_property(Aspekto, "transform/scale",
+		Vector2(0.01,0.01), Vector2(0.5,0.5), 1, Tween.TRANS_ELASTIC,
+		Tween.EASE_IN_OUT
+	)
+	Aperi.start()
 
 func _fixed_process(delta):
 	Korpoj = get_colliding_bodies()
@@ -37,4 +44,12 @@ func _fixed_process(delta):
 
 func _on_Kvadrato_input_event( viewport, evento, shape_idx ):
 	if T.foranta and evento.is_pressed() and T.Objekto != self:
-		queue_free()
+		var Kasxi = get_node("Kasxi")
+		Kasxi.interpolate_property(Aspekto, "transform/scale",
+			Vector2(0.5,0.5), Vector2(0.01,0.01), 1, Tween.TRANS_ELASTIC,
+			Tween.EASE_IN_OUT
+		)
+		Kasxi.start()
+
+func _on_Kasxi_tween_complete( object, key ):
+	queue_free()

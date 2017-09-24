@@ -1,7 +1,7 @@
 extends Node
 
-onready var Radiko = null
-onready var Niveloj = null
+var Radiko = null
+var Niveloj = null
 var nivelo = 0
 var jxus_rekordita = false
 var Kaptitajxo = null

@@ -46,7 +46,7 @@ func _process(delta):
 func _on_Areo_body_enter( korpo ):
 	if korpo.tipo == "Objekto":
 		get_node("Areo").clear_shapes()
-		T.Radiko.Stelon_kapti_sono.play()
+		T.Radiko.Stelon_kapti_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 		T.steloj += 1
 		get_node("/root/Radiko/Kanvaso/Steloj").set_text(str(T.steloj)+" X")
 		Kasxi.start()
