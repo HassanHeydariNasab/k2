@@ -19,16 +19,19 @@ onready var FPS = get_node("Kanvaso/FPS")
 onready var Steloj_Sxangxi = get_node("Kanvaso/Steloj/Sxangxi")
 onready var Steloj_Nombroj = get_node("Kanvaso/Steloj/Nombroj")
 
-const KVADRATOJ = [0, 4, 9, 4]
+const KVADRATOJ = [ [],
+					[0, 4, 9, 4],
+					[0, 20, 9, 4]
+					]
 var kvadratoj = 0
 
 func _ready():
 	T.Radiko = self
 	T.Objekto = null
 	T.steloj = 0
-	kvadratoj = KVADRATOJ[T.nivelo]
+	kvadratoj = KVADRATOJ[T.pako][T.nivelo]
 	Kvadrato_Nombroj.set_text(str(kvadratoj))
-	add_child(load("res://Niveloj/N%d.tscn" % T.nivelo).instance())
+	add_child(load("res://Niveloj/P%dN%d.tscn" % [T.pako,T.nivelo]).instance())
 	Nivelo = get_node("Nivelo")
 	Nivelo.get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	Steloj = Nivelo.get_node("Steloj")
@@ -58,6 +61,7 @@ func _on_Kvadrato_pressed():
 	Kvadrato_.set_global_pos(Ekvivejo.get_global_pos())
 	Kvadrato_.get_node("Aspekto").set_texture(Kvadrato_teksturo)
 	Objektoj.add_child(Kvadrato_)
+#	if T.Objekto != null and weakref(T.Objekto).get_ref():
 	if T.Objekto != null:
 		T.Objekto.set_fixed_process(false)
 		T.Objekto.get_node("Aspekto").set_texture(Kvadrato_malaktivita_teksturo)
@@ -82,8 +86,8 @@ func _on_Rotacii_timeout():
 		Rotacii_sono.set("stream/play", T.Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _on_PreVenko_timeout():
-	if T.steloj > T.Agordejo.get_value("Steloj", str(T.nivelo), 0):
-		T.Agordejo.set_value("Steloj", str(T.nivelo), T.steloj)
+	if T.steloj > T.Agordejo.get_value("Steloj", "P"+str(T.pako)+"N"+str(T.nivelo), 0):
+		T.Agordejo.set_value("Steloj", "P"+str(T.pako)+"N"+str(T.nivelo), T.steloj)
 		T.Agordejo.save(T.agordejo)
 		T.jxus_rekordita = true
 	get_tree().change_scene("res://Niveloj.tscn")

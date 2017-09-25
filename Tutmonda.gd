@@ -3,6 +3,7 @@ extends Node
 var Radiko = null
 var Niveloj = null
 var nivelo = 0
+var pako = 1
 var jxus_rekordita = false
 var Kaptitajxo = null
 

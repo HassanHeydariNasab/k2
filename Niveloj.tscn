@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Niveloj.gd" type="Script" id=1]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=2]
@@ -6,10 +6,24 @@
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=4]
 [ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=5]
 [ext_resource path="res://UI/Stelo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Muzikoj/353194__inspectorj__wind-chimes-a.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Sonoj/66136__theta4__ding30603-spedup.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Sonoj/169375__yoh__whoosh-crystal-reverse-yoh.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Sonoj/97470__egolessdub__keys19.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Tiparoj/purisa.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://Muzikoj/353194__inspectorj__wind-chimes-a.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sonoj/66136__theta4__ding30603-spedup.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Sonoj/169375__yoh__whoosh-crystal-reverse-yoh.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sonoj/97470__egolessdub__keys19.ogg" type="AudioStream" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = false
+draw_bg = true
 
 [node name="Niveloj" type="Control"]
 
@@ -24,6 +38,9 @@ margin/top = 0.0
 margin/right = 1160.0
 margin/bottom = 560.0
 script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="N1" type="Button" parent="."]
 
@@ -111,6 +128,62 @@ flat = false
 [node name="Stelo" parent="N3" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 170, 100 )
+
+[node name="Pakoj" type="HButtonArray" parent="."]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 250.0
+margin/top = -450.0
+margin/right = 660.0
+margin/bottom = -550.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/selected = SubResource( 1 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font_selected = ExtResource( 5 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_selected = Color( 1, 0.768627, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+flat = false
+button/count = 4
+button/min_button_size = 100.0
+button/align = 0
+button/0/text = "1"
+button/0/tooltip = ""
+button/0/icon = null
+button/1/text = "2"
+button/1/tooltip = ""
+button/1/icon = null
+button/2/text = "3"
+button/2/tooltip = ""
+button/2/icon = null
+button/3/text = "4"
+button/3/tooltip = ""
+button/3/icon = null
+button/selected = 0
+
+[node name="Etikedo" type="Label" parent="."]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 20.0
+margin/top = -450.0
+margin/right = 240.0
+margin/bottom = -560.0
+custom_fonts/font = ExtResource( 7 )
+text = "Pakoj:"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Agordoj" type="Button" parent="."]
 
@@ -201,7 +274,7 @@ flat = false
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 7 )
+stream/stream = ExtResource( 8 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
@@ -212,7 +285,7 @@ stream/buffering_ms = 500
 
 [node name="Stelo_kolizio_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 8 )
+stream/stream = ExtResource( 9 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 10.0
@@ -223,7 +296,7 @@ stream/buffering_ms = 500
 
 [node name="Rekordita_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 9 )
+stream/stream = ExtResource( 10 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 20.0
@@ -234,7 +307,7 @@ stream/buffering_ms = 500
 
 [node name="Enveno_sono" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 10 )
+stream/stream = ExtResource( 11 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 5.0
@@ -248,6 +321,8 @@ stream/buffering_ms = 500
 [connection signal="pressed" from="N2" to="." method="_on_N2_pressed"]
 
 [connection signal="pressed" from="N3" to="." method="_on_N3_pressed"]
+
+[connection signal="button_selected" from="Pakoj" to="." method="_on_Pakoj_button_selected"]
 
 [connection signal="pressed" from="Agordoj" to="." method="_on_Agordoj_pressed"]
 
