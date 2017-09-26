@@ -5,3 +5,5 @@
 11: ?
 
 2: elementoj kiel steloj, luno
+
+3: saltilo
