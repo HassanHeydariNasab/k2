@@ -7,6 +7,10 @@
 
 [node name="Nivelo" type="Node2D"]
 
+[node name="Ekvivejo" type="Node2D" parent="."]
+
+transform/pos = Vector2( 90, 220 )
+
 [node name="Steloj" type="Node2D" parent="."]
 
 editor/display_folded = true

@@ -11,7 +11,7 @@ var Triangulo_teksturo = preload("res://Objektoj/triangulo.png")
 var Triangulo_malaktivita_teksturo = preload("res://Objektoj/triangulo_malaktivita.png")
 onready var Kamero = get_node("Kamero")
 onready var Objektoj = get_node("Objektoj")
-onready var Ekvivejo = get_node("Ekvivejo")
+onready var Ekvivejo = null
 onready var Rotacii = get_node("Rotacii")
 onready var PreVenko = get_node("PreVenko")
 onready var Rotacii_sono = get_node("Rotacii_sono")
@@ -25,12 +25,12 @@ onready var Steloj_Sxangxi = get_node("Kanvaso/Steloj/Sxangxi")
 onready var Steloj_Nombroj = get_node("Kanvaso/Steloj/Nombroj")
 
 const KVADRATOJ = [ [],
-					[0, 2, 9, 4],
-					[0, 20, 9, 4]
+					[0, 2, 3, 1],
+					[0, 1, 9, 4]
 					]
 const TRIANGULOJ = [ [],
-					[0, 1, 10, 3],
-					[0, 20, 9, 4]
+					[0, 1, 0, 1],
+					[0, 1, 9, 4]
 					]
 var kvadratoj = 0
 var trianguloj = 0
@@ -48,6 +48,7 @@ func _ready():
 	Nivelo.get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	Steloj = Nivelo.get_node("Steloj")
 	Luno = Nivelo.get_node("Luno")
+	Ekvivejo = Nivelo.get_node("Ekvivejo")
 	if T.akcelometro_aktivita:
 		get_node("Kanvaso/Kontroliloj").queue_free()
 	Steloj_Sxangxi.interpolate_property(Steloj_Nombroj, "custom_colors/font_color",
@@ -136,6 +137,17 @@ func _on_Sxangxi_tween_step( object, key, elapsed, value ):
 func _on_Rekomenci_pressed():
 	get_tree().reload_current_scene()
 
-
 func _on_Rulumilo_value_changed( valoro ):
-	Kamero.set_offset(Vector2(valoro, 300))
+	Kamero.set_offset(Vector2(valoro, 220))
+
+func _on_Zomilo_button_selected( idx ):
+	var zomo = 1
+	if idx == 0:
+		zomo = 1
+	elif idx == 1:
+		zomo = 1.3
+	elif idx == 2:
+		zomo = 1.7
+	elif idx == 3:
+		zomo = 2.2
+	Kamero.set_zoom(Vector2(zomo, zomo))

@@ -7,6 +7,10 @@
 
 [node name="Nivelo" type="Node2D"]
 
+[node name="Ekvivejo" type="Node2D" parent="."]
+
+transform/pos = Vector2( 160, 250 )
+
 [node name="Steloj" type="Node2D" parent="."]
 
 editor/display_folded = true
@@ -25,7 +29,7 @@ transform/pos = Vector2( 710, 320 )
 
 [node name="Luno" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 830, 160 )
+transform/pos = Vector2( 2400, 160 )
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
 
@@ -40,14 +44,14 @@ stream/buffering_ms = 500
 
 [node name="Pluvo" type="Particles2D" parent="."]
 
-visibility/opacity = 0.5
-transform/pos = Vector2( 570, -10 )
-config/amount = 512
-config/lifetime = 1.0
-config/time_scale = 1.65
+visibility/opacity = 0.7
+transform/pos = Vector2( 180, -790 )
+config/amount = 700
+config/lifetime = 2.0
+config/time_scale = 2.0
 config/preprocess = 5.0
 config/process_mode = 1
-config/half_extents = Vector2( 1200, 0 )
+config/half_extents = Vector2( 2500, 0 )
 config/texture = ExtResource( 4 )
 params/direction = 30.0
 params/spread = 10.0

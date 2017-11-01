@@ -3,13 +3,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 40, 10 )
+extents = Vector2( 48, 16 )
 
 [node name="Saltilo" type="Node2D"]
 
 [node name="Aspekto" type="Polygon2D" parent="."]
 
-polygon = Vector2Array( -40, -10, 40, -10, 40, 10, -40, 10 )
+polygon = Vector2Array( -48, -32, 48, -32, 48, 0, -48, 0 )
 uv = Vector2Array(  )
 color = Color( 1, 0.0901961, 0.266667, 1 )
 vertex_colors = ColorArray(  )
@@ -25,7 +25,7 @@ invert/border = 100.0
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -16 )
 shapes/0/trigger = false
 collision/layers = 8
 collision/mask = 2
@@ -36,6 +36,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 
+transform/pos = Vector2( 0, -16 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

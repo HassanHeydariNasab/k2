@@ -35,3 +35,11 @@ func _ready():
 		akcelometro_aktivita = Agordejo.get_value("Agordoj", "akcelometro", true)
 	else:
 		akcelometro_aktivita = Agordejo.get_value("Agordoj", "akcelometro", false)
+
+func plenigi_cxielon_de_steloj():
+	var Stelo = preload("res://Elementoj/Stelo.tscn")
+	for i in range(100):
+			randomize()
+			var Stelo_ = Stelo.instance()
+			Stelo_.set_global_pos(Vector2(rand_range(-1300,3500), rand_range(-500, 400)))
+			add_child(Stelo_)
