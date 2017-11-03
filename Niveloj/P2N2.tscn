@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Elementoj/Stelo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elementoj/Luno.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Muzikoj/152723__corsica-s__popibuuns.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Belajxoj/pluvo.png" type="Texture" id=4]
+[ext_resource path="res://Muzikoj/136971__d-w__ambiance-heavy-rain-loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Belajxoj/pluvo.png" type="Texture" id=5]
+[ext_resource path="res://Objektoj/Kolono.tscn" type="PackedScene" id=6]
 
 [node name="Nivelo" type="Node2D"]
 
@@ -13,27 +15,116 @@ transform/pos = Vector2( 160, 250 )
 
 [node name="Steloj" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Stelo" parent="Steloj" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 597, 332 )
+transform/pos = Vector2( 540, 270 )
 
 [node name="Stelo1" parent="Steloj" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 480, 360 )
+transform/pos = Vector2( 360, 330 )
 
 [node name="Stelo2" parent="Steloj" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 710, 320 )
+transform/pos = Vector2( 960, 30 )
+
+[node name="Stelo3" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 849.6, 399.6 )
+
+[node name="Stelo4" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 789.6, 399.6 )
+
+[node name="Stelo5" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 729.6, 399.6 )
+
+[node name="Stelo6" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 669.6, 399.6 )
+
+[node name="Stelo7" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 609.6, 399.6 )
+
+[node name="Stelo8" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 609.6, 219.6 )
+
+[node name="Stelo9" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 669.6, 219.6 )
+
+[node name="Stelo10" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 729.6, 219.6 )
+
+[node name="Stelo11" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 789.6, 219.6 )
+
+[node name="Stelo12" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 849.6, 219.6 )
+
+[node name="Stelo13" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 879.6, 309.6 )
+
+[node name="Stelo14" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 819.6, 309.6 )
+
+[node name="Stelo15" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 759.6, 309.6 )
+
+[node name="Stelo16" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 699.6, 309.6 )
+
+[node name="Stelo17" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 639.6, 309.6 )
+
+[node name="Stelo18" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1410, 120 )
+
+[node name="Stelo19" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1320, 210 )
+
+[node name="Stelo20" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1230, 300 )
+
+[node name="Stelo21" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1350, 30 )
+
+[node name="Stelo22" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1140, 390 )
 
 [node name="Luno" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 2400, 160 )
+transform/pos = Vector2( 1230, -150 )
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 3 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -5.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Pluvo_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 4 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
@@ -46,13 +137,13 @@ stream/buffering_ms = 500
 
 visibility/opacity = 0.7
 transform/pos = Vector2( 180, -790 )
-config/amount = 700
+config/amount = 1000
 config/lifetime = 2.0
 config/time_scale = 2.0
 config/preprocess = 5.0
 config/process_mode = 1
-config/half_extents = Vector2( 2500, 0 )
-config/texture = ExtResource( 4 )
+config/half_extents = Vector2( 2600, 0 )
+config/texture = ExtResource( 5 )
 params/direction = 30.0
 params/spread = 10.0
 params/linear_velocity = 700.0
@@ -72,5 +163,17 @@ params/anim_initial_pos = 0.0
 randomness/initial_size = 0.4
 randomness/final_size = 0.3
 color/color = Color( 0.297797, 0.265503, 0.585938, 0.918039 )
+
+[node name="Kolono" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -30, 390 )
+
+[node name="Kolono1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 150, 330 )
+
+[node name="Kolono2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 570, 90 )
 
 

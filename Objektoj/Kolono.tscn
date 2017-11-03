@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=1]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 103, 0 )
+extents = Vector2( 206, 0 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 103, 327.273 )
+extents = Vector2( 206, 1178.18 )
 
 [node name="Kolono" type="Node2D"]
 
@@ -18,8 +18,8 @@ transform/pos = Vector2( 10, 0 )
 
 transform/pos = Vector2( 390, 360 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 0.0970875, 0, 0, 0.305555, 0, -100 )
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.0970875, 0, 0, 0.305555, 0, -360 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 2
@@ -30,9 +30,9 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kapo"]
 
-transform/pos = Vector2( 0, -100 )
+transform/pos = Vector2( 0, -360 )
 transform/scale = Vector2( 0.0970875, 0.305555 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -60,9 +60,9 @@ _update_shape_index = 0
 [node name="Aspekto" type="Polygon2D" parent="."]
 
 transform/pos = Vector2( 390, 360 )
-polygon = Vector2Array( 10, -100, 10, 100, -10, 100, -10, -100 )
+polygon = Vector2Array( 20, -360, 20, 360, -20, 360, -20, -360 )
 uv = Vector2Array(  )
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.129412, 0.129412, 0.129412, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Elementoj/Stelo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Elementoj/Luno.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objektoj/Kolono.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Muzikoj/353501__inspectorj__ambience-wind-chimes.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Belajxoj/Lampiredo.tscn" type="PackedScene" id=5]
 
 [node name="Nivelo" type="Node2D"]
 
@@ -45,13 +46,15 @@ transform/pos = Vector2( 780, 100 )
 
 [node name="Kolono" parent="." instance=ExtResource( 3 )]
 
+transform/pos = Vector2( 10, 271 )
+
 [node name="Kolono1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 210, 0 )
+transform/pos = Vector2( 210, 270 )
 
 [node name="Kolono2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -290, 230 )
+transform/pos = Vector2( -290, 380 )
 transform/scale = Vector2( 1, 0.5 )
 
 [node name="Fonmuziko" type="StreamPlayer" parent="."]
@@ -64,5 +67,18 @@ stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+
+[node name="Lampiredo" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 40, 240 )
+z/z = 1
+z/relative = false
+
+[node name="Lampiredo1" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 250, 390 )
+transform/scale = Vector2( 0.7, 0.7 )
+z/z = 1
+z/relative = false
 
 

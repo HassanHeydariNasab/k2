@@ -26,11 +26,11 @@ onready var Steloj_Nombroj = get_node("Kanvaso/Steloj/Nombroj")
 
 const KVADRATOJ = [ [],
 					[0, 2, 3, 1],
-					[0, 1, 9, 4]
+					[0, 1, 15, 8]
 					]
 const TRIANGULOJ = [ [],
 					[0, 1, 0, 1],
-					[0, 1, 9, 4]
+					[0, 1, 5, 4]
 					]
 var kvadratoj = 0
 var trianguloj = 0
@@ -46,6 +46,8 @@ func _ready():
 	add_child(load("res://Niveloj/P%dN%d.tscn" % [T.pako,T.nivelo]).instance())
 	Nivelo = get_node("Nivelo")
 	Nivelo.get_node("Fonmuziko").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
+	if Nivelo.has_node("Pluvo_sono"):
+		Nivelo.get_node("Pluvo_sono").set("stream/play", T.Agordejo.get_value("Agordoj", "Muzikoj", true))
 	Steloj = Nivelo.get_node("Steloj")
 	Luno = Nivelo.get_node("Luno")
 	Ekvivejo = Nivelo.get_node("Ekvivejo")

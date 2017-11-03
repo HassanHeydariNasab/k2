@@ -1,0 +1,254 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Elementoj/Stelo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Elementoj/Luno.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Muzikoj/353501__inspectorj__ambience-wind-chimes.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Objektoj/Saltilo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objektoj/Balancilo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objektoj/Kolono.tscn" type="PackedScene" id=6]
+
+[node name="Nivelo" type="Node2D"]
+
+transform/pos = Vector2( 1568, 0 )
+
+[node name="Ekvivejo" type="Node2D" parent="."]
+
+transform/pos = Vector2( -1538, 60 )
+
+[node name="Steloj" type="Node2D" parent="."]
+
+transform/pos = Vector2( -32, 0 )
+
+[node name="Stelo1" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 686, 241.6 )
+
+[node name="Stelo2" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 910, -80.4 )
+
+[node name="Stelo3" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1776, 180 )
+
+[node name="Stelo4" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1686, 180 )
+
+[node name="Stelo5" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1596, 180 )
+
+[node name="Stelo6" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1506, 180 )
+
+[node name="Stelo7" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1416, 180 )
+
+[node name="Stelo8" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1326, 180 )
+
+[node name="Stelo9" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1236, 180 )
+
+[node name="Stelo10" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1176, -90 )
+
+[node name="Stelo11" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1086, -90 )
+
+[node name="Stelo12" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -996, -90 )
+
+[node name="Stelo13" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -906, -90 )
+
+[node name="Stelo14" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -816, -90 )
+
+[node name="Stelo15" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -726, -90 )
+
+[node name="Stelo16" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -636, -90 )
+
+[node name="Stelo17" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -276, -240 )
+
+[node name="Stelo18" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1164, -330 )
+
+[node name="Stelo19" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -396, 270 )
+
+[node name="Stelo20" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -486, 270 )
+
+[node name="Stelo21" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -576, 270 )
+
+[node name="Stelo22" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -666, 270 )
+
+[node name="Stelo23" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -756, 270 )
+
+[node name="Stelo24" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -756, 180 )
+
+[node name="Stelo25" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -666, 180 )
+
+[node name="Stelo26" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -576, 150 )
+
+[node name="Stelo27" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -486, 90 )
+
+[node name="Stelo28" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -396, 30 )
+
+[node name="Stelo29" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -966, 210 )
+
+[node name="Stelo30" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1056, 210 )
+
+[node name="Stelo31" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1146, 210 )
+
+[node name="Stelo32" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1146, 120 )
+
+[node name="Stelo33" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1056, 120 )
+
+[node name="Stelo34" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -966, 120 )
+
+[node name="Stelo35" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1356, -120 )
+
+[node name="Stelo36" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1266, -120 )
+
+[node name="Stelo37" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1266, -30 )
+
+[node name="Stelo38" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -1356, -30 )
+
+[node name="Stelo39" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1464, 300 )
+
+[node name="Stelo40" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1524, 240 )
+
+[node name="Stelo41" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1584, 180 )
+
+[node name="Stelo42" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1644, 120 )
+
+[node name="Stelo43" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1704, 60 )
+
+[node name="Stelo45" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1704, -30 )
+
+[node name="Stelo46" parent="Steloj" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1644, -90 )
+
+[node name="Luno" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1552, -210 )
+
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 3 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Saltiloj" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -32, 0 )
+
+[node name="Saltilo" parent="Saltiloj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 686, 337.6 )
+
+[node name="Saltilo1" parent="Saltiloj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 910, 9.59999 )
+
+[node name="Balancilo" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -1538, 240 )
+
+[node name="Balancilo1" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -938, -30 )
+
+[node name="Kolono" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1928, 300 )
+
+[node name="Kolono3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 742, -270 )
+
+[node name="Kolono1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1328, 30 )
+
+[node name="Kolono2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -698, -180 )
+
+

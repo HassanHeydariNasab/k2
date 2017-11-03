@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Belajxoj/Lampiredo.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 2.0
+_data = {
+"points": Vector2Array( 0, 0, 215.79, 174.737, 40, 20, 0, 0, 124.113, -151.64, 350, 92, 0, 0, -151.902, 83.0856, 232, 12, 0, 0, 66.3895, -0.333469, 440, 160, 0, 0, 34.8936, -52.9866, 570, 10, 0, 0, 67.2025, 41.3554, 750, 30, 0, 0, 1.29236, -86.5878, 860, 10, 0, 0, 39.6554, 50.4706, 1100, 50, 0, 0, 508.311, -187.462, 1414, -88, 0, 0, 216.302, 165.832, 2238, -56, 0, 0, -839.974, -511.916, 3320, 46, 0, 0, -364.109, 429, 1676, -38, 0, 0, -360.504, -115.361, 148, -112, 0, 0, 0, 0, 40, 20 )
+}
+
+[node name="Lampiredo" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Vojo" type="Path2D" parent="."]
+
+transform/pos = Vector2( -956, -135 )
+curve = SubResource( 1 )
+
+[node name="Postirajxo" type="PathFollow2D" parent="Vojo"]
+
+transform/pos = Vector2( 40, 20 )
+transform/rot = -38.8705
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 1.0
+
+[node name="Aspekto" type="Polygon2D" parent="Vojo/Postirajxo"]
+
+transform/rot = -9.46225
+polygon = Vector2Array( -8.0047, 2.00079, -4.0047, 0.000786781, -0.00469971, 2.00078, -0.00469971, 4.00078, -2.0047, 8.00079, -6.0047, 10.0008, -10, 10, -10.0047, 6.00079 )
+uv = Vector2Array(  )
+color = Color( 0.178153, 0.980469, 0.0382996, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+

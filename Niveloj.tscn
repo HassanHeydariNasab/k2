@@ -44,14 +44,13 @@ __meta__ = {
 
 [node name="N1" type="Button" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 30.0
+margin/left = 100.0
 margin/top = 0.0
-margin/right = 370.0
+margin/right = 400.0
 margin/bottom = 100.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
@@ -69,18 +68,19 @@ flat = false
 
 [node name="Stelo" parent="N1" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 160, 100 )
+transform/pos = Vector2( 150, 100 )
 
 [node name="N2" type="Button" parent="."]
 
-editor/display_folded = true
+anchor/left = 3
+anchor/right = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 410.0
+margin/left = -430.0
 margin/top = 0.0
-margin/right = 750.0
+margin/right = -730.0
 margin/bottom = 100.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
@@ -98,18 +98,19 @@ flat = false
 
 [node name="Stelo" parent="N2" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 160, 100 )
+transform/pos = Vector2( 150, 100 )
 
 [node name="N3" type="Button" parent="."]
 
-editor/display_folded = true
+anchor/left = 1
+anchor/right = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 790.0
+margin/left = -760.0
 margin/top = 0.0
-margin/right = 1130.0
+margin/right = -1060.0
 margin/bottom = 100.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
@@ -127,20 +128,21 @@ flat = false
 
 [node name="Stelo" parent="N3" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 170, 100 )
+transform/pos = Vector2( 150, 100 )
 
 [node name="Pakoj" type="HButtonArray" parent="."]
 
 anchor/top = 1
 anchor/bottom = 1
+rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 250.0
-margin/top = -450.0
-margin/right = 660.0
-margin/bottom = -550.0
+margin/left = 234.0
+margin/top = -468.0
+margin/right = 442.0
+margin/bottom = -554.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/selected = SubResource( 1 )
 custom_styles/normal = ExtResource( 4 )
@@ -149,7 +151,7 @@ custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color_selected = Color( 1, 0.768627, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 flat = false
-button/count = 4
+button/count = 2
 button/min_button_size = 100.0
 button/align = 0
 button/0/text = "1"
@@ -158,26 +160,21 @@ button/0/icon = null
 button/1/text = "2"
 button/1/tooltip = ""
 button/1/icon = null
-button/2/text = "3"
-button/2/tooltip = ""
-button/2/icon = null
-button/3/text = "4"
-button/3/tooltip = ""
-button/3/icon = null
 button/selected = 0
 
 [node name="Etikedo" type="Label" parent="."]
 
 anchor/top = 1
 anchor/bottom = 1
+rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 20.0
-margin/top = -450.0
+margin/top = -460.0
 margin/right = 240.0
-margin/bottom = -560.0
+margin/bottom = -570.0
 custom_fonts/font = ExtResource( 7 )
 text = "Pakoj:"
 valign = 1
@@ -196,10 +193,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -830.0
+margin/left = -840.0
 margin/top = -400.0
-margin/right = -1302.0
-margin/bottom = -500.0
+margin/right = -1298.0
+margin/bottom = -486.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -228,7 +225,7 @@ size_flags/vertical = 2
 margin/left = -960.0
 margin/top = -320.0
 margin/right = -1246.0
-margin/bottom = -420.0
+margin/bottom = -406.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -257,7 +254,7 @@ size_flags/vertical = 2
 margin/left = -700.0
 margin/top = -480.0
 margin/right = -1357.0
-margin/bottom = -580.0
+margin/bottom = -566.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
