@@ -16,3 +16,9 @@ func _on_EN_pressed():
 	T.Agordejo.save(T.agordejo)
 	T.lingvo_elektita = true
 	get_tree().change_scene("res://Niveloj.tscn")
+
+func _on_PL_pressed():
+	T.Agordejo.set_value("Lingvo", "lingvo", "pl")
+	T.Agordejo.save(T.agordejo)
+	T.lingvo_elektita = true
+	get_tree().change_scene("res://Niveloj.tscn")
